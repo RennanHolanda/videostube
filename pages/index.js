@@ -1,7 +1,6 @@
 import React from 'react';
 import config from '../config.json'
 import styled from 'styled-components'
-import { CSSReset } from '../src/components/CSSReset'
 import Menu from '../src/components/Menu/Index';
 import { StyledTimeline } from '../src/components/Timelime';
 
@@ -15,7 +14,6 @@ function HomePage() {
 
   return (
     <>
-    <CSSReset/>
     <div style={estiloDaFonte}>
     <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro}/>
     <Header/>
@@ -38,6 +36,8 @@ export default HomePage
 //   )
 // }
 const StyledHeader = styled.div`
+    background-color: ${({ theme }) => theme.backgroundLevel1}; 
+
     img {
         width: 80px;
         height: 80px;
@@ -52,6 +52,7 @@ const StyledHeader = styled.div`
     }
 `;
 const StyledBanner = styled.div`
+
     background-image: url(${({ bg }) => bg});
     background-repeat: no-repeat center;
     /* background-image: url(${config.bg});*/
